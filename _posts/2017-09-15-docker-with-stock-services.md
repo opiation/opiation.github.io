@@ -117,4 +117,4 @@ docker run \
 [nginx-documentation]: http://nginx.org/en/docs/
 
 
-{% include head.html %}
+{% include header.html %}
