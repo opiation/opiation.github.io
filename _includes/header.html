@@ -1,0 +1,20 @@
+<script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+<script>
+    mermaidAPI.initialize({
+        startOnLoad: false
+    });
+
+    document.addEventListener("DOMContentLoaded" , function () {
+        var elements = document.querySelectorAll(".language-mermaid");
+
+        for (index in elements) {
+            element = elements[index];
+            var graphDefinition = element.innerText;
+            var svg = mermaidAPI.render('ha_mermaid_' + index, graphDefinition, function (svg) {});
+
+            if (svg) {
+                element.innerHTML = svg;
+            }
+        }
+    });
+</script>

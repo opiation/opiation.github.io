@@ -1,7 +1,7 @@
 ---
   title: Running standard services with Docker
   date: "2017-09-15"
-  category: Docker for work
+  category: docker-for-work
   tags:
     - docker
     - nginx
@@ -15,7 +15,7 @@ Applications usually require significant customization to interact with a pletho
 
 # Deploying a reverse proxy with docker
 
-In this section, we'll be deploying a reverse proxy ([NGINX][docker-nginx]) as a container to proxy requests it receives on port **80** to 1 of 2 application servers depending on the request URL.  Requests to **staging.example.com** will be proxied to the host running the staging application server and **www.exmaple.com** will to proxied to the production host.
+In this section, we'll be deploying a reverse proxy ([NGINX][docker-nginx]) as a container to proxy requests it receives on port **80** to 1 of 2 application servers depending on the request URL.  Requests to **staging.example.com** will be proxied to the host running the staging application server and **www.example.com** will to proxied to the production host.
 
 
 #### Tools and skills you'll need
@@ -115,3 +115,6 @@ docker run \
 
 [docker-nginx]: https://hub.docker.com/_/nginx/
 [nginx-documentation]: http://nginx.org/en/docs/
+
+
+{% include head.html %}
