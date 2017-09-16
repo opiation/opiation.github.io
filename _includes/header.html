@@ -1,20 +1,17 @@
 <script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
 <script>
-    mermaidAPI.initialize({
-        startOnLoad: false
-    });
+    document.addEventListener("DOMContentLoaded", function () {
+        mermaid.init(undefined, ".language-mermaid");
 
-    document.addEventListener("DOMContentLoaded" , function () {
-        var elements = document.querySelectorAll(".language-mermaid");
-
-        for (index in elements) {
-            element = elements[index];
-            var graphDefinition = element.innerText;
-            var svg = mermaidAPI.render('ha_mermaid_' + index, graphDefinition, function (svg) {});
-
-            if (svg) {
-                element.innerHTML = svg;
+        var mermaid_code_elements = document.querySelectorAll("code.language-mermaid");
+        for (var code_index = 0; code_index < mermaid_code_elements.length; code_index += 1) {
+            var code_element = mermaid_code_elements[code_index];
+            var parent_pre_element = code_element.parentNode;
+            var svgs = code_element.querySelectorAll("svg");
+            for (var svg_index = 0; svg_index < svgs.length; svg_index += 1) {
+                parent_pre_element.parentNode.insertBefore(svgs[svg_index], parent_pre_element);
             }
+            parent_pre_element.parentNode.removeChild(parent_pre_element);
         }
     });
 </script>
