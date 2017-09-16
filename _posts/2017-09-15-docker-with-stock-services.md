@@ -5,6 +5,7 @@
   tags:
     - docker
     - nginx
+  regenerate: true
 ---
 
 ## A little context
