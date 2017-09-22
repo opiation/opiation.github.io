@@ -2,6 +2,7 @@
   title: Running standard services with Docker
   date: "2017-09-15"
   category: docker
+  description: "A brief article on using docker to deploy containers using prebuilt/official images (Uses nginx as an example, no image-building is required)"
   tags:
     - docker
     - nginx
