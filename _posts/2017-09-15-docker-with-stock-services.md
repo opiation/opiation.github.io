@@ -1,7 +1,7 @@
 ---
   title: Running standard services with Docker
   date: "2017-09-15"
-  category: docker-for-work
+  category: docker
   tags:
     - docker
     - nginx
@@ -116,6 +116,3 @@ docker run \
 
 [docker-nginx]: https://hub.docker.com/_/nginx/
 [nginx-documentation]: http://nginx.org/en/docs/
-
-
-{% include header.html %}
