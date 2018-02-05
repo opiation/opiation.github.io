@@ -35,11 +35,24 @@ The host where NGINX will run must be your own machine or one that is otherwise 
 
 Find below a minimal network diagram demonstrating the relationship between hosts.
 
-```mermaid
+{% mermaid %}
 graph TB
-  nginx["<center><b>Nginx</b><br />10.12.7.3:8080</center>"] --staging.example.com--> staging("<center><b>Staging server</b><br />10.12.7.17:3000</center>")
-  nginx --www.example.com--> production("<center><b>Production server</b><br />10.12.7.99:3000</center>")
-```
+  nginx("<center>
+    <b>Nginx</b><br />
+    <code>10.12.7.3:8080</code>
+  </center>")
+  production("<center>
+    <b>Production server</b><br />
+    <code>10.12.7.99:3000</code>
+  </center>")
+  staging("<center>
+    <b>Staging server</b><br />
+    <code>10.12.7.17:3000</code>
+  </center>")
+
+  nginx --staging.example.com--> staging
+  nginx --www.example.com--> production
+{% endmermaid %}
 
 
 ## Our reverse proxy configuration
@@ -47,6 +60,7 @@ graph TB
 There is more than one way with NGINX to route requests to different hosts.  In our case, given the relative simplicity of our network, we've opted for defining 2 servers, one for each application server.
 
 Our staging server in NGINX must accept requests destined for **staging.example.com** and forward them to **10.12.7.17:3001**.
+
 ```nginx
 server {
   # The host to which this NGINX server should respond

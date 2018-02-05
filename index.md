@@ -1,12 +1,18 @@
 ---
   title: Opiationism
-
 ---
 
-# A series of articles
+Here are some lightweight tech articles to help you familiarize yourself with various tools and a few of their use cases.
 
-{% for post in site.posts %}
+## Docker in the wild
 
-* [{{ post.title }}]({{ post.url }})
+{% for post in site.categories.docker %}
+
+### [{{ post.title }}]({{ post.url }})
+{{ post.description }}
 
 {% endfor %}
+
+### Portable applications with Docker images
+
+### Orchestrating container Docker Compose
